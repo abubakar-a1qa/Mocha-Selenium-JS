@@ -6,8 +6,6 @@ class CommunityMarketPage extends BasePage {
     constructor(driver) {
         super(driver); // Pass the driver instance to the BasePage
         // Define selectors for elements on the Community Market page
-        this.mainContentsLocator = By.id('mainContents'); // Locator for main contents in market page
-        this.sidebarContentsLocator = By.xpath("//div[contains(@class, 'sidebar_contents')]");
         this.showAdvancedOptionsDropdownLocator = By.xpath("//div[contains(@class, 'input_container')]");
         this.searchCommunityMarketFormLocator = By.xpath("//div[@id='market_advancedsearch_dialog']");
         this.allGamesDropdownLocator = By.xpath("//div[contains(@class, 'appselect') and contains(@id, 'market_advancedsearch_appselect')]");
@@ -17,11 +15,8 @@ class CommunityMarketPage extends BasePage {
         this.searchButtonLocator = By.xpath("//div[@class='btn_medium btn_green_white_innerfade']");
         this.appliedFilterItemsLocator = (filterItemName) => `//a[contains(@class, 'market_searchedForTerm') and contains(., '${filterItemName}')]`;
         this.resultsTableItemsByIndexLocator = (itemIndex) => `//div[@id='searchResultsRows']//div[contains(@id, 'result_${itemIndex}')]`;
-    }
-
-    async isMarketPageVisible() {
-        const element = await this.waitForElementVisible(this.mainContentsLocator);
-        return await element.isDisplayed();
+        this.resultsTableItemsByItemNameLocator = (itemIndex) => `//span[contains(@id, 'result_${itemIndex}')]`;
+        this.resultItemPageTitleLocator = By.xpath("//div[contains(@class, 'market_listing_iteminfo')]//h1[contains(@class, 'hover_item_name')]");
     }
 
     async clickOnShowAdvancedOptionsDropdown() {
@@ -59,16 +54,32 @@ class CommunityMarketPage extends BasePage {
             const filterLocator = By.xpath(this.appliedFilterItemsLocator(filterItemName));
             const filterElement = await this.driver.findElement(filterLocator);
             const filterText = await filterElement.getText();
-            assert(filterText.includes(filterItemName)); 
+            assert(filterText.includes(filterItemName));
         }
     }
 
-    async clickOnPriceSortButton() {
-        await this.click(this.priceSortLocator);
+    // Get the name of the item from the search result using the given index
+    async getItemNameFromSearchResult(itemIndex) {
+        return await this.getText(By.xpath(this.resultsTableItemsByItemNameLocator(itemIndex)));
     }
 
+    // Click on a specific search result item by index
     async clickOnSpecificSearchResultItem(itemIndex) {
         await this.click(By.xpath(this.resultsTableItemsByIndexLocator(itemIndex)));
+    }
+
+    // Get the title of the item on the item page
+    async getItemPageTitle() {
+        const element = await this.waitForElementVisible(this.resultItemPageTitleLocator);
+        return await element.getText();
+    }
+
+    // Compare the names from the search result and the item page
+    async compareItemNames(itemIndex) {
+        const itemNameFromSearchResult = await this.getItemNameFromSearchResult(itemIndex);
+        const itemPageTitle = await this.getItemPageTitle();
+
+        return itemNameFromSearchResult === itemPageTitle;
     }
 }
 

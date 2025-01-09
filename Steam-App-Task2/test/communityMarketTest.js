@@ -16,7 +16,7 @@ describe('Steam Community Market', function () {
 
     before(async function () {
         let options = new chrome.Options().addArguments('--start-maximized');
-        driver = new Builder().forBrowser('chrome').setChromeOptions(options).build(); 
+        driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
         await driver.manage().setTimeouts({ implicit: 10000 });
 
         homePage = new HomePage(driver);
@@ -33,7 +33,7 @@ describe('Steam Community Market', function () {
         // Display advanced options window
         await communityMarketPage.clickOnShowAdvancedOptionsDropdown(); // Open advanced options
         const advancedOptionsVisible = await communityMarketPage.isShowAdvancedOptionWindowVisible(); // Check visibility of advanced options window
-        assert(advancedOptionsVisible); // Verify it's visible using assert
+        assert(advancedOptionsVisible, 'Advanced options window is not visible'); // Verify it's visible using assert
 
         // Search for results with correct filters
         await communityMarketPage.selectGame('Dota 2'); // Select the game "Dota 2"
@@ -41,9 +41,18 @@ describe('Steam Community Market', function () {
         await communityMarketPage.selectRarity('Rare'); // Select the rarity "Rare"
         await communityMarketPage.clickOnSearch(); // Click on the search button
         await communityMarketPage.isFilterApplied(['Dota 2', 'Phantom Assassin', 'Rare']); // Validate the filters
-        
-        // Click on the first item
-        await communityMarketPage.clickOnSpecificSearchResultItem(0); // Click on the first item
+
+        // Get the item name from the search result
+        const itemIndex = 0;
+
+        // Click on the first item to go to the item page
+        await communityMarketPage.clickOnSpecificSearchResultItem(itemIndex);
+
+        // verify it matches the item page title after click
+        const isItemTitleMatching = await communityMarketPage.compareItemNames(itemIndex);
+
+        // Assert if the item names match
+        assert(isItemTitleMatching, 'Item title on the page does not match the result text');
     });
 
     after(async function () {
