@@ -44,14 +44,14 @@ describe('Steam Community Market', function () {
 
         // Get the item name from the search result
         const itemIndex = 0;
+        const itemNameFromSearchResult = await communityMarketPage.getItemNameFromSearchResult(itemIndex);
 
         // Click on the first item to go to the item page
         await communityMarketPage.clickOnSpecificSearchResultItem(itemIndex);
 
-        // verify it matches the item page title after click
-        const isItemTitleMatching = await communityMarketPage.compareItemNames(itemIndex);
-
-        // Assert if the item names match
+        // Get the item title on the item page and validate if they match
+        const itemPageTitle = await communityMarketPage.getItemPageTitle();
+        const isItemTitleMatching = itemNameFromSearchResult === itemPageTitle;
         assert(isItemTitleMatching, 'Item title on the page does not match the result text');
     });
 

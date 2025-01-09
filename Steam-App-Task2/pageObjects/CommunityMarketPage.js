@@ -73,14 +73,6 @@ class CommunityMarketPage extends BasePage {
         const element = await this.waitForElementVisible(this.resultItemPageTitleLocator);
         return await element.getText();
     }
-
-    // Compare the names from the search result and the item page
-    async compareItemNames(itemIndex) {
-        const itemNameFromSearchResult = await this.getItemNameFromSearchResult(itemIndex);
-        const itemPageTitle = await this.getItemPageTitle();
-
-        return itemNameFromSearchResult === itemPageTitle;
-    }
 }
 
 module.exports = CommunityMarketPage;
