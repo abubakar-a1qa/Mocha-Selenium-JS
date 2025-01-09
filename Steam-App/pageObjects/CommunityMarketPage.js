@@ -1,4 +1,4 @@
-const { expect } = require('chai');
+const { assert } = require('chai');
 const BasePage = require('./BasePage');
 const { By } = require('selenium-webdriver');
 
@@ -60,7 +60,7 @@ class CommunityMarketPage extends BasePage {
             const filterLocator = By.xpath(this.appliedFilterItemsLocator(filterItemName));
             const filterElement = await this.driver.findElement(filterLocator);
             const filterText = await filterElement.getText();
-            expect(filterText).to.include(filterItemName);
+            assert.include(filterText, filterItemName, `Filter item '${filterItemName}' should be applied.`);
         }
     }
 
