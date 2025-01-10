@@ -1,12 +1,9 @@
 const { By, until } = require('selenium-webdriver');
+const TimeOut = require('../utils/timeouts/TimeOut');
 
 class BasePage {
     constructor(driver) {
         this.driver = driver;
-    }
-
-    async open(url) {
-        await this.driver.get(url);
     }
 
     async click(locator) {
@@ -14,17 +11,15 @@ class BasePage {
         await element.click();
     }
 
-    async waitForElementVisible(locator) {
-        return await this.driver.wait(until.elementLocated(locator), 10000);
+    async waitForElementVisible(locator, timeout = TimeOut.TenSeconds) {
+        const element = await this.driver.wait(until.elementLocated(locator), timeout);
+        await this.driver.wait(until.elementIsVisible(element), timeout);
+        return element;
     }
 
     async getText(locator) {
         const element = await this.waitForElementVisible(locator);
         return await element.getText();
-    }
-
-    async findElements(locator) {
-        return await this.driver.findElements(locator);
     }
 }
 

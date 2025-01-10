@@ -4,7 +4,8 @@ require('chromedriver');
 const assert = require('assert');
 const HomePageSteps = require('../steps/HomePageSteps');
 const CommunityMarketSteps = require('../steps/CommunityMarketSteps');
-const {baseUrl} = require("../resources/config");
+const { baseUrl } = require('../resources/config');
+const TimeOut = require('../utils/timeouts/TimeOut');
 
 let driver;
 
@@ -12,12 +13,12 @@ describe('Steam Community Market', function () {
     let homePageSteps;
     let communityMarketSteps;
 
-    this.timeout(30000);
+    this.timeout(TimeOut.ThirtySeconds);
 
     before(async function () {
         let options = new chrome.Options().addArguments('--start-maximized');
         driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
-        await driver.manage().setTimeouts({ implicit: 10000 });
+        await driver.manage().setTimeouts({ implicit: TimeOut.TenSeconds });
 
         // Navigate directly to the base URL
         await driver.get(baseUrl);
@@ -26,7 +27,7 @@ describe('Steam Community Market', function () {
         communityMarketSteps = new CommunityMarketSteps(driver);
     });
 
-    it('should perform all tests on Community Market', async function () {
+    it('Should perform all tests on Community Market', async function () {
         await homePageSteps.navigateToCommunityMarket();
         const currentUrl = await driver.getCurrentUrl();
         assert(currentUrl.includes('market'), 'Not on the Community Market page');
@@ -42,7 +43,7 @@ describe('Steam Community Market', function () {
     });
 
     after(async function () {
-        this.timeout(5000);
+        this.timeout(TimeOut.FiveSeconds);
         if (driver) {
             await driver.quit();
         }
