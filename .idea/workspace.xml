@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d86f92bd-42e5-419e-8362-e5a9289bc8cf" name="Changes" comment="vcs.xml" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="Steam-SelectItem-App" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;abubakar-a1qa&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/abubakar-a1qa/Mocha-Selenium-JS.git&quot;,
+    &quot;accountId&quot;: &quot;9a9eabd9-8d11-4e92-8608-a3bab8f20d3f&quot;
+  }
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="2rOGyy4b9H3tiJRJAUK9qn5Say7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Mocha.Steam Community Market (1).executor": "Run",
+    "Mocha.Steam Community Market.executor": "Run",
+    "Mocha.Steam Community Market.should perform all tests on Community Market.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "#2 on main",
+    "last_opened_file_path": "D:/GitHub/Mocha-Selenium-JS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.mocha.mocha_node_package_dir": "D:/GitHub/Mocha-Selenium-JS/Steam-App-Task2/node_modules/mocha",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\WebStorm 2024.3.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Steam Community Market (1)" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Steam-App-Task2/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/Steam-App-Task2</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/Steam-App-Task2/test/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Steam Community Market" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Steam-App/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/Steam-App</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/Steam-App/test/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Steam Community Market.should perform all tests on Community Market" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/Steam-App-Task2/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$/Steam-App-Task2</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/Steam-App-Task2/test/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+        <name value="should perform all tests on Community Market" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Mocha.Steam Community Market (1)" />
+        <item itemvalue="Mocha.Steam Community Market.should perform all tests on Community Market" />
+        <item itemvalue="Mocha.Steam Community Market" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-deb605915726-JavaScript-WS-243.22562.222" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d86f92bd-42e5-419e-8362-e5a9289bc8cf" name="Changes" comment="" />
+      <created>1736422965236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1736422965236</updated>
+      <workItem from="1736422966345" duration="308000" />
+      <workItem from="1736423291014" duration="1099000" />
+      <workItem from="1736424437553" duration="6581000" />
+      <workItem from="1736432136379" duration="188000" />
+      <workItem from="1736439140522" duration="72000" />
+      <workItem from="1736485797058" duration="1396000" />
+    </task>
+    <task id="LOCAL-00001" summary="Updated the code. Used 'assert' instead of 'expect'">
+      <option name="closed" value="true" />
+      <created>1736423785577</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736423785577</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Getting error at last validation.">
+      <option name="closed" value="true" />
+      <created>1736431779159</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736431779159</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Completed. Code is running successfully">
+      <option name="closed" value="true" />
+      <created>1736432065627</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736432065627</updated>
+    </task>
+    <task id="LOCAL-00004" summary="vcs.xml">
+      <option name="closed" value="true" />
+      <created>1736487187143</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1736487187143</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="Steam-SelectItem-App" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Updated the code. Used 'assert' instead of 'expect'" />
+    <MESSAGE value="Getting error at last validation." />
+    <MESSAGE value="Completed. Code is running successfully" />
+    <MESSAGE value="vcs.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="vcs.xml" />
+  </component>
+</project>
