@@ -7,7 +7,7 @@ class CommunityMarketSteps {
 
     async openAdvancedSearchOptions() {
         await this.communityMarketPage.clickOnShowAdvancedOptionsDropdown();
-        return await this.communityMarketPage.isShowAdvancedOptionWindowVisible();
+        return this.communityMarketPage.isShowAdvancedOptionWindowVisible();
     }
 
     async searchForItem(gameName, heroName, rarityName) {
@@ -28,8 +28,16 @@ class CommunityMarketSteps {
         return itemName === itemPageTitle;
     }
 
+    async getItemNamesFromResultList() {
+        return this.communityMarketPage.getItemNamesFromResultList();
+    }
+
     async clickOnPriceSortButton() {
         await this.communityMarketPage.clickOnPriceSortButton();
+    }
+
+    async waitForItemsToChange(initialResultList) {
+        await this.communityMarketPage.waitForItemsToChange(initialResultList);
     }
 
     async verifyPriceSortedInAscendingOrder() {

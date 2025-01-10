@@ -19,7 +19,7 @@ class BasePage {
 
     async getText(locator) {
         const element = await this.waitForElementVisible(locator);
-        return await element.getText();
+        return element.getText();
     }
 }
 

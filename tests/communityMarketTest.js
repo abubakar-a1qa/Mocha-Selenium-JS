@@ -18,7 +18,6 @@ describe('Steam Community Market', function () {
     before(async function () {
         let options = new chrome.Options().addArguments('--start-maximized');
         driver = new Builder().forBrowser('chrome').setChromeOptions(options).build();
-        await driver.manage().setTimeouts({ implicit: TimeOut.TenSeconds });
 
         // Navigate directly to the base URL
         await driver.get(baseUrl);
@@ -53,12 +52,14 @@ describe('Steam Community Market', function () {
         await communityMarketSteps.searchForItem('Dota 2', 'Anti-Mage', 'Uncommon');
         await communityMarketSteps.validateFilters(['Dota 2', 'Anti-Mage', 'Uncommon']);
 
+        const initialResultList = await communityMarketSteps.getItemNamesFromResultList();
+
         await communityMarketSteps.clickOnPriceSortButton();
-        await driver.sleep(TimeOut.TwoSeconds);
+        await communityMarketSteps.waitForItemsToChange(initialResultList);
         await communityMarketSteps.verifyPriceSortedInAscendingOrder();
 
         await communityMarketSteps.clickOnPriceSortButton();
-        await driver.sleep(TimeOut.TwoSeconds);
+        await communityMarketSteps.waitForItemsToChange(initialResultList);
         await communityMarketSteps.verifyPriceSortedInDescendingOrder();
     });
 

@@ -2,6 +2,7 @@ const BasePage = require('./BasePage');
 const CommunityMarketPageLocators = require('../locators/CommunityMarketPageLocators');
 const { By } = require('selenium-webdriver');
 const assert = require('assert');
+const TimeOut = require("../utils/timeouts/TimeOut");
 
 class CommunityMarketPage extends BasePage {
     constructor(driver) {
@@ -61,8 +62,32 @@ class CommunityMarketPage extends BasePage {
         return element.getText();
     }
 
+    async getItemNamesFromResultList() {
+        const itemNames = [];
+        for (let i = 0; i <= 9; i++) {
+            const itemName = await this.getText(By.xpath(this.locators.resultsTableItemsByItemNameLocator(i)));
+            itemNames.push(itemName);
+        }
+        return itemNames;
+    }
+
     async clickOnPriceSortButton() {
         await this.click(this.locators.priceSortLocator);
+    }
+
+    async waitForItemsToChange(initialResultList) {
+        let isChanged = false;
+
+        while (!isChanged) {
+            const updatedResultList = await this.getItemNamesFromResultList();
+
+            isChanged = initialResultList.some((item, index) => item !== updatedResultList[index]);
+
+            if (isChanged) {
+                return true;
+            }
+        }
+        return false;
     }
 
     async isPriceSortedInAscendingOrder() {
