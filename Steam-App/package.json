@@ -1,0 +1,18 @@
+{
+  "name": "steamapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --no-timeouts --reporter mochawesome"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "chai": "^5.1.2",
+    "chromedriver": "^131.0.5",
+    "mocha": "^11.0.1",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.27.0"
+  }
+}
