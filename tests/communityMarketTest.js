@@ -13,7 +13,7 @@ describe('Steam Community Market', function () {
     let homePageSteps;
     let communityMarketSteps;
 
-    this.timeout(TimeOut.ThirtySeconds);
+    this.timeout(TimeOut.FiveMinutes);
 
     before(async function () {
         let options = new chrome.Options().addArguments('--start-maximized');
@@ -27,7 +27,7 @@ describe('Steam Community Market', function () {
         communityMarketSteps = new CommunityMarketSteps(driver);
     });
 
-    it('Should perform all tests on Community Market', async function () {
+    it('Verify if 1st selected item is Displayed', async function () {
         await homePageSteps.navigateToCommunityMarket();
         const currentUrl = await driver.getCurrentUrl();
         assert(currentUrl.includes('market'), 'Not on the Community Market page');
@@ -42,8 +42,26 @@ describe('Steam Community Market', function () {
         assert(isResultValid, 'Item title on the page does not match the result text');
     });
 
+    it('Verify the Price Sorting', async function () {
+        await homePageSteps.navigateToCommunityMarket();
+        const currentUrl = await driver.getCurrentUrl();
+        assert(currentUrl.includes('market'), 'Not on the Community Market page');
+
+        const isAdvancedOptionsVisible = await communityMarketSteps.openAdvancedSearchOptions();
+        assert(isAdvancedOptionsVisible, 'Advanced options window is not visible');
+
+        await communityMarketSteps.searchForItem('Dota 2', 'Anti-Mage', 'Uncommon');
+        await communityMarketSteps.validateFilters(['Dota 2', 'Anti-Mage', 'Uncommon']);
+
+        await communityMarketSteps.clickOnPriceSortButton();
+        await communityMarketSteps.verifyPriceSortedInAscendingOrder();
+
+        await communityMarketSteps.clickOnPriceSortButton();
+        await communityMarketSteps.verifyPriceSortedInDescendingOrder();
+    });
+
     after(async function () {
-        this.timeout(TimeOut.FiveSeconds);
+        this.timeout(TimeOut.TenSeconds);
         if (driver) {
             await driver.quit();
         }

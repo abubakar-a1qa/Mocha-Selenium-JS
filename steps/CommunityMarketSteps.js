@@ -1,3 +1,5 @@
+const assert = require('assert');
+
 class CommunityMarketSteps {
     constructor(driver) {
         this.communityMarketPage = new (require('../pageObjects/CommunityMarketPage'))(driver);
@@ -24,6 +26,20 @@ class CommunityMarketSteps {
         await this.communityMarketPage.clickOnSpecificSearchResultItem(itemIndex);
         const itemPageTitle = await this.communityMarketPage.getItemPageTitle();
         return itemName === itemPageTitle;
+    }
+
+    async clickOnPriceSortButton() {
+        await this.communityMarketPage.clickOnPriceSortButton();
+    }
+
+    async verifyPriceSortedInAscendingOrder() {
+        const isSorted = await this.communityMarketPage.isPriceSortedInAscendingOrder();
+        assert(isSorted, 'Prices are not sorted in ascending order');
+    }
+
+    async verifyPriceSortedInDescendingOrder() {
+        const isSorted = await this.communityMarketPage.isPriceSortedInDescendingOrder();
+        assert(isSorted, 'Prices are not sorted in descending order');
     }
 }
 

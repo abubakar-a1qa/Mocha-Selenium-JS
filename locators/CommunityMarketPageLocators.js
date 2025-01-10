@@ -12,4 +12,6 @@ module.exports = {
     resultsTableItemsByIndexLocator: (itemIndex) => `//div[@id='searchResultsRows']//div[contains(@id, 'result_${itemIndex}')]`,
     resultsTableItemsByItemNameLocator: (itemIndex) => `//span[contains(@id, 'result_${itemIndex}')]`,
     resultItemPageTitleLocator: By.xpath("//div[contains(@class, 'market_listing_iteminfo')]//h1[contains(@class, 'hover_item_name')]"),
+    priceSortLocator: By.xpath("//div[contains(@class, 'market_listing_right_cell') and contains(@class, 'market_listing_their_price') and contains(@class, 'market_sortable_column') and contains(@data-sorttype, 'price')]"),
+    priceTagLocator: By.xpath("//span[contains(@class, 'normal_price') and contains(text(), '$')]"),
 };

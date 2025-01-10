@@ -6,7 +6,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "mocha --no-timeouts --reporter mochawesome"
+    "test": "mocha --no-timeouts --reporter mochawesome 'tests/**/*.js'"
   },
   "author": "",
   "license": "ISC",
