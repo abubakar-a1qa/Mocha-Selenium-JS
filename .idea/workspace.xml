@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" beforeDir="false" afterPath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/communityMarketTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/communityMarketTest.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +121,7 @@
       <updated>1736489896343</updated>
       <workItem from="1736489897483" duration="3625000" />
       <workItem from="1736493909505" duration="24000" />
-      <workItem from="1736496757631" duration="2904000" />
+      <workItem from="1736496757631" duration="3343000" />
     </task>
     <servers />
   </component>
