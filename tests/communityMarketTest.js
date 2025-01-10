@@ -64,7 +64,6 @@ describe('Steam Community Market', function () {
     });
 
     after(async function () {
-        this.timeout(TimeOut.TenSeconds);
         if (driver) {
             await driver.quit();
         }
