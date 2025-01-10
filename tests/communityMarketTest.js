@@ -54,9 +54,11 @@ describe('Steam Community Market', function () {
         await communityMarketSteps.validateFilters(['Dota 2', 'Anti-Mage', 'Uncommon']);
 
         await communityMarketSteps.clickOnPriceSortButton();
+        await driver.sleep(TimeOut.TwoSeconds);
         await communityMarketSteps.verifyPriceSortedInAscendingOrder();
 
         await communityMarketSteps.clickOnPriceSortButton();
+        await driver.sleep(TimeOut.TwoSeconds);
         await communityMarketSteps.verifyPriceSortedInDescendingOrder();
     });
 

@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="added mochawesome-report directory to gitignore">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/communityMarketTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/communityMarketTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +56,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Mocha.Steam Community Market.Verify the Price Sorting.executor": "Run",
     "Mocha.Steam Community Market.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -63,7 +67,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.mocha.mocha_node_package_dir": "D:/GitHub/Mocha-Selenium-JS/SteamSelectItemApp-UsingSteps/node_modules/mocha",
+    "nodejs.mocha.mocha_node_package_dir": "D:/GitHub/Mocha-Selenium-JS/node_modules/mocha",
     "nodejs_package_manager_path": "npm",
     "npm.test.executor": "Run",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
@@ -71,7 +75,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Mocha.Steam Community Market">
+  <component name="RunManager" selected="Mocha.Steam Community Market.Verify if 1st selected item is Displayed">
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -97,8 +101,42 @@
       </test-names>
       <method v="2" />
     </configuration>
+    <configuration name="Steam Community Market.Verify if 1st selected item is Displayed" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+        <name value="Verify if 1st selected item is Displayed" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Steam Community Market.Verify the Price Sorting" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+        <name value="Verify the Price Sorting" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Steam Community Market.Verify if 1st selected item is Displayed" />
+        <item itemvalue="Mocha.Steam Community Market.Verify the Price Sorting" />
         <item itemvalue="Mocha.Steam Community Market" />
         <item itemvalue="npm.test" />
       </list>
@@ -121,8 +159,33 @@
       <updated>1736489896343</updated>
       <workItem from="1736489897483" duration="3625000" />
       <workItem from="1736493909505" duration="24000" />
-      <workItem from="1736496757631" duration="3343000" />
+      <workItem from="1736496757631" duration="5032000" />
     </task>
+    <task id="LOCAL-00001" summary="updated gitIgnore">
+      <option name="closed" value="true" />
+      <created>1736500288046</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1736500288047</updated>
+    </task>
+    <task id="LOCAL-00002" summary="delete mochawesome">
+      <option name="closed" value="true" />
+      <created>1736500420122</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1736500420122</updated>
+    </task>
+    <task id="LOCAL-00003" summary="added mochawesome-report directory to gitignore">
+      <option name="closed" value="true" />
+      <created>1736500480885</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1736500480885</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -133,10 +196,28 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="UsingSteps-SteamApp-2-Clear" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="updated gitIgnore" />
+    <MESSAGE value="delete mochawesome" />
+    <MESSAGE value="added mochawesome-report directory to gitignore" />
+    <option name="LAST_COMMIT_MESSAGE" value="added mochawesome-report directory to gitignore" />
   </component>
 </project>

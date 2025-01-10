@@ -73,12 +73,12 @@ class CommunityMarketPage extends BasePage {
             const price1Text = await priceTags[i].getText();
             const price2Text = await priceTags[i + 1].getText();
 
-            // Remove the currency symbol (like "$") and the "USD" text, then parse the remaining number
+            // Remove non-numeric characters and parse as a float
             const price1 = parseFloat(price1Text.replace(/[^0-9.-]+/g, ''));
             const price2 = parseFloat(price2Text.replace(/[^0-9.-]+/g, ''));
 
-            // Check if prices are not in ascending order
-            if (price1 > price2) {
+            // Check if prices are not in ascending order and not equal
+            if (price1 > price2 && price1 !== price2) {
                 sorted = false;
                 break;
             }
@@ -94,12 +94,12 @@ class CommunityMarketPage extends BasePage {
             const price1Text = await priceTags[i].getText();
             const price2Text = await priceTags[i + 1].getText();
 
-            // Clean the text to remove non-numeric characters and parse the price
+            // Remove non-numeric characters and parse as a float
             const price1 = parseFloat(price1Text.replace(/[^0-9.-]+/g, ''));
             const price2 = parseFloat(price2Text.replace(/[^0-9.-]+/g, ''));
 
-            // Check if prices are not in descending order
-            if (price1 < price2) {
+            // Check if prices are not in descending order and not equal
+            if (price1 < price2 && price1 !== price2) {
                 sorted = false;
                 break;
             }
