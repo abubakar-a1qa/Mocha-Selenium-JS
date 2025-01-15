@@ -1,0 +1,28 @@
+{
+  "scenarios": [
+    {
+      "testCase": "Test Case 1 - Lina Common",
+      "game": "Dota 2",
+      "hero": "Lina",
+      "rarity": "Common"
+    },
+    {
+      "testCase": "Test Case 2 - Invoker Mythical",
+      "game": "Dota 2",
+      "hero": "Invoker",
+      "rarity": "Mythical"
+    },
+    {
+      "testCase": "Test Case 3 - Oracle Immortal",
+      "game": "Dota 2",
+      "hero": "Oracle",
+      "rarity": "Immortal"
+    },
+    {
+      "testCase": "Test Case 4 - Abaddon Ancient",
+      "game": "Dota 2",
+      "hero": "Abaddon",
+      "rarity": "Ancient"
+    }
+  ]
+}

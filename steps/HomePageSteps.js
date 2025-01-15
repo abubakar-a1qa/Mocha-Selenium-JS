@@ -1,6 +1,8 @@
+const HomePage = require('../pageObjects/HomePage');
+
 class HomePageSteps {
     constructor(driver) {
-        this.homePage = new (require('../pageObjects/HomePage'))(driver);
+        this.homePage = new HomePage(driver);
     }
 
     async navigateToCommunityMarket() {

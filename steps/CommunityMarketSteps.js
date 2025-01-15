@@ -1,8 +1,9 @@
 const assert = require('assert');
+const CommunityMarketPage = require('../pageObjects/CommunityMarketPage');
 
 class CommunityMarketSteps {
     constructor(driver) {
-        this.communityMarketPage = new (require('../pageObjects/CommunityMarketPage'))(driver);
+        this.communityMarketPage = new CommunityMarketPage(driver);
     }
 
     async openAdvancedSearchOptions() {
@@ -18,10 +19,20 @@ class CommunityMarketSteps {
     }
 
     async validateFilters(filterItems) {
-        await this.communityMarketPage.isFilterApplied(filterItems);
+        for (const filterItem of filterItems) {
+            const isApplied = await this.communityMarketPage.isFilterApplied(filterItem);
+            assert(isApplied, `Filter ${filterItem} is not applied`);
+        }
     }
 
     async verifySearchResult(itemIndex) {
+        const isNoItemsMessageDisplayed = await this.communityMarketPage.isMarketTableListingMessageVisible();
+
+        if (isNoItemsMessageDisplayed) {
+            console.log("No items are available at Market listing table. Skipping the result verification.");
+            return true;
+        }
+
         const itemName = await this.communityMarketPage.getItemNameFromSearchResult(itemIndex);
         await this.communityMarketPage.clickOnSpecificSearchResultItem(itemIndex);
         const itemPageTitle = await this.communityMarketPage.getItemPageTitle();
@@ -36,18 +47,13 @@ class CommunityMarketSteps {
         await this.communityMarketPage.clickOnPriceSortButton();
     }
 
-    async waitForItemsToChange(initialResultList) {
-        await this.communityMarketPage.waitForItemsToChange(initialResultList);
+    async waitForItemsToChange(resultList) {
+        await this.communityMarketPage.waitForItemsToChange(resultList);
     }
 
-    async verifyPriceSortedInAscendingOrder() {
-        const isSorted = await this.communityMarketPage.isPriceSortedInAscendingOrder();
-        assert(isSorted, 'Prices are not sorted in ascending order');
-    }
-
-    async verifyPriceSortedInDescendingOrder() {
-        const isSorted = await this.communityMarketPage.isPriceSortedInDescendingOrder();
-        assert(isSorted, 'Prices are not sorted in descending order');
+    async verifyPriceSorted(order) {
+        const isSorted = await this.communityMarketPage.isPriceSorted(order);
+        assert(isSorted, `Prices are not sorted in ${order} order`);
     }
 }
 

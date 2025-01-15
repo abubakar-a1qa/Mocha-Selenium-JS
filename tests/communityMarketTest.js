@@ -6,6 +6,7 @@ const HomePageSteps = require('../steps/HomePageSteps');
 const CommunityMarketSteps = require('../steps/CommunityMarketSteps');
 const { baseUrl } = require('../resources/config');
 const TimeOut = require('../utils/timeouts/TimeOut');
+const testData = require('../resources/testData.json');
 
 let driver;
 
@@ -56,11 +57,30 @@ describe('Steam Community Market', function () {
 
         await communityMarketSteps.clickOnPriceSortButton();
         await communityMarketSteps.waitForItemsToChange(initialResultList);
-        await communityMarketSteps.verifyPriceSortedInAscendingOrder();
+        await communityMarketSteps.verifyPriceSorted('ascending');
+
+        const firstSortedResultList = await communityMarketSteps.getItemNamesFromResultList();
 
         await communityMarketSteps.clickOnPriceSortButton();
-        await communityMarketSteps.waitForItemsToChange(initialResultList);
-        await communityMarketSteps.verifyPriceSortedInDescendingOrder();
+        await communityMarketSteps.waitForItemsToChange(firstSortedResultList);
+        await communityMarketSteps.verifyPriceSorted('descending');
+    });
+
+    testData.scenarios.forEach((scenario) => {
+        it(`Verify if 1st selected item is Displayed for ${scenario.testCase}`, async function () {
+            await homePageSteps.navigateToCommunityMarket();
+            const currentUrl = await driver.getCurrentUrl();
+            assert(currentUrl.includes('market'), 'Not on the Community Market page');
+
+            const isAdvancedOptionsVisible = await communityMarketSteps.openAdvancedSearchOptions();
+            assert(isAdvancedOptionsVisible, 'Advanced options window is not visible');
+
+            await communityMarketSteps.searchForItem(scenario.game, scenario.hero, scenario.rarity);
+            await communityMarketSteps.validateFilters([scenario.game, scenario.hero, scenario.rarity]);
+
+            const isResultValid = await communityMarketSteps.verifySearchResult(0);
+            assert(isResultValid, 'No item was found or clicked because there is no result table, or item title does not match the result text');
+        });
     });
 
     after(async function () {

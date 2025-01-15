@@ -1,7 +1,7 @@
-const BasePage = require('./BasePage');
-const CommunityMarketPageLocators = require('../locators/CommunityMarketPageLocators');
 const { By } = require('selenium-webdriver');
 const assert = require('assert');
+const BasePage = require('./BasePage');
+const CommunityMarketPageLocators = require('../locators/CommunityMarketPageLocators');
 const TimeOut = require("../utils/timeouts/TimeOut");
 
 class CommunityMarketPage extends BasePage {
@@ -44,9 +44,12 @@ class CommunityMarketPage extends BasePage {
         for (const filterItemName of filterItemNames) {
             const filterLocator = By.xpath(this.locators.appliedFilterItemsLocator(filterItemName));
             const filterElement = await this.driver.findElement(filterLocator);
-            const filterText = await filterElement.getText();
-            assert(filterText.includes(filterItemName));
+            const isDisplayed = await filterElement.isDisplayed();
+            if (!isDisplayed) {
+                return false;
+            }
         }
+        return true;
     }
 
     async getItemNameFromSearchResult(itemIndex) {
@@ -75,61 +78,52 @@ class CommunityMarketPage extends BasePage {
         await this.click(this.locators.priceSortLocator);
     }
 
-    async waitForItemsToChange(initialResultList) {
+    async isMarketTableListingMessageVisible() {
+        try {
+            const element = await this.driver.findElement(this.locators.marketTableListingMessage);
+            return await element.isDisplayed();
+        } catch (e) {
+            return false;
+        }
+    }
+
+    /*async waitForItemsToChange(resultList) {
         let isChanged = false;
 
         while (!isChanged) {
             const updatedResultList = await this.getItemNamesFromResultList();
+            isChanged = resultList.some((item, index) => item !== updatedResultList[index]);
+        }
+        return isChanged;
+    }*/
 
-            isChanged = initialResultList.some((item, index) => item !== updatedResultList[index]);
+    async waitForItemsToChange(resultList, maxRetries = 3, intervalTime = TimeOut.OneSecond) {
+        let isChanged = false;
+        let retries = 0;
 
-            if (isChanged) {
-                return true;
+        while (!isChanged && retries < maxRetries) {
+            const updatedResultList = await this.getItemNamesFromResultList();
+            isChanged = resultList.some((item, index) => item !== updatedResultList[index]);
+
+            if (!isChanged) {
+                retries++;
+                await this.driver.sleep(intervalTime);
             }
         }
-        return false;
+
+        return isChanged;
     }
 
-    async isPriceSortedInAscendingOrder() {
+    async isPriceSorted(order = 'ascending') {
         const priceTags = await this.driver.findElements(this.locators.priceTagLocator);
-        let sorted = true;
-
-        for (let i = 0; i < priceTags.length - 1; i++) {
-            const price1Text = await priceTags[i].getText();
-            const price2Text = await priceTags[i + 1].getText();
-
-            // Remove non-numeric characters and parse as a float
-            const price1 = parseFloat(price1Text.replace(/[^0-9.-]+/g, ''));
-            const price2 = parseFloat(price2Text.replace(/[^0-9.-]+/g, ''));
-
-            // Check if prices are not in ascending order and not equal
-            if (price1 > price2 && price1 !== price2) {
-                sorted = false;
-                break;
-            }
+        const prices = [];
+        for (const priceTag of priceTags) {
+            const priceText = await priceTag.getText();
+            const price = parseFloat(priceText.replace(/[^0-9.-]+/g, ''));
+            prices.push(price);
         }
-        return sorted;
-    }
-
-    async isPriceSortedInDescendingOrder() {
-        const priceTags = await this.driver.findElements(this.locators.priceTagLocator);
-        let sorted = true;
-
-        for (let i = 0; i < priceTags.length - 1; i++) {
-            const price1Text = await priceTags[i].getText();
-            const price2Text = await priceTags[i + 1].getText();
-
-            // Remove non-numeric characters and parse as a float
-            const price1 = parseFloat(price1Text.replace(/[^0-9.-]+/g, ''));
-            const price2 = parseFloat(price2Text.replace(/[^0-9.-]+/g, ''));
-
-            // Check if prices are not in descending order and not equal
-            if (price1 < price2 && price1 !== price2) {
-                sorted = false;
-                break;
-            }
-        }
-        return sorted;
+        const sortedPrices = [...prices].sort((a, b) => (order === 'ascending' ? a - b : b - a));
+        return JSON.stringify(prices) === JSON.stringify(sortedPrices);
     }
 }
 

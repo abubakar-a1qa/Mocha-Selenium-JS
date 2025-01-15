@@ -4,8 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="Updated the code to reduce wait time.">
+    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="Cleaning unnecessary timeouts">
+      <change afterPath="$PROJECT_DIR$/resources/testData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" beforeDir="false" afterPath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/steps/HomePageSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/HomePageSteps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/communityMarketTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/communityMarketTest.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,6 +59,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Mocha.Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}.executor": "Run",
     "Mocha.Steam Community Market.Verify if 1st selected item is Displayed.executor": "Run",
     "Mocha.Steam Community Market.Verify the Price Sorting.executor": "Run",
     "Mocha.Steam Community Market.executor": "Run",
@@ -73,7 +80,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Mocha.Steam Community Market.Verify the Price Sorting">
+  <component name="RunManager" selected="Mocha.Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}">
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -96,6 +103,22 @@
       <test-file>$PROJECT_DIR$/tests/communityMarketTest.js</test-file>
       <test-names>
         <name value="Steam Community Market" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+      <node-interpreter>project</node-interpreter>
+      <node-options />
+      <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
+      <working-directory>$PROJECT_DIR$</working-directory>
+      <pass-parent-env>true</pass-parent-env>
+      <ui>bdd</ui>
+      <extra-mocha-options />
+      <test-kind>TEST</test-kind>
+      <test-file>$PROJECT_DIR$/tests/communityMarketTest.js</test-file>
+      <test-names>
+        <name value="Steam Community Market" />
+        <name value="Verify if 1st selected item is Displayed for ${scenario.testCase}" />
       </test-names>
       <method v="2" />
     </configuration>
@@ -133,9 +156,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Mocha.Steam Community Market.Verify the Price Sorting" />
+        <item itemvalue="Mocha.Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}" />
         <item itemvalue="Mocha.Steam Community Market" />
         <item itemvalue="Mocha.Steam Community Market.Verify if 1st selected item is Displayed" />
+        <item itemvalue="Mocha.Steam Community Market.Verify the Price Sorting" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -158,6 +182,8 @@
       <workItem from="1736489897483" duration="3625000" />
       <workItem from="1736493909505" duration="24000" />
       <workItem from="1736496757631" duration="8912000" />
+      <workItem from="1736831765368" duration="3217000" />
+      <workItem from="1736918105336" duration="17051000" />
     </task>
     <task id="LOCAL-00001" summary="updated gitIgnore">
       <option name="closed" value="true" />
