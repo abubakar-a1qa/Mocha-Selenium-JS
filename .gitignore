@@ -93,3 +93,4 @@ Thumbs.db
 
 #mochawesome report
 mochawesome-report/
+.idea/workspace.xml
