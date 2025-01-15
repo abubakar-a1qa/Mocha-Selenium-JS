@@ -81,7 +81,7 @@ class CommunityMarketPage extends BasePage {
     async isMarketTableListingMessageVisible() {
         try {
             const element = await this.driver.findElement(this.locators.marketTableListingMessage);
-            return await element.isDisplayed();
+            return element.isDisplayed();
         } catch (e) {
             return false;
         }
