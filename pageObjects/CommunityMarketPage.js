@@ -66,21 +66,14 @@ class CommunityMarketPage extends BasePage {
 
     async getItemNamesFromResultList() {
         const itemNames = [];
-        let index = 0;
+        const totalPricedItems = await this.driver.findElements(this.locators.priceTagLocator);
 
-        while (true) {
+        for (let index = 0; index < totalPricedItems.length; index++) {
             const itemLocator = By.xpath(this.locators.resultsTableItemsByItemNameLocator(index));
-
-            const element = await this.driver.findElements(itemLocator);
-
-            if (element.length === 0) {
-                break;
-            }
-
             const itemName = await this.getText(itemLocator);
             itemNames.push(itemName);
-            index++;
         }
+
         return itemNames;
     }
 
@@ -97,8 +90,8 @@ class CommunityMarketPage extends BasePage {
         }
     }
 
-    async waitForItemsToChange(resultList, timeout = TimeOut.HalfSecond) {
-        return await this.driver.wait(async () => {
+    async waitForItemsToChange(resultList, timeout = TimeOut.OneSecond) {
+        return this.driver.wait(async () => {
             const updatedResultList = await this.getItemNamesFromResultList();
             return resultList.some((item, index) => item !== updatedResultList[index]);
         }, timeout);
