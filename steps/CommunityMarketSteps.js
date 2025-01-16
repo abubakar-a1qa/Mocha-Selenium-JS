@@ -1,4 +1,4 @@
-const assert = require('assert');
+const { assert } = require('chai');
 const CommunityMarketPage = require('../pageObjects/CommunityMarketPage');
 
 class CommunityMarketSteps {
@@ -21,7 +21,7 @@ class CommunityMarketSteps {
     async validateFilters(filterItems) {
         for (const filterItem of filterItems) {
             const isApplied = await this.communityMarketPage.isFilterApplied(filterItem);
-            assert(isApplied, `Filter ${filterItem} is not applied`);
+            assert.isTrue(isApplied, `Filter ${filterItem} is not applied`);
         }
     }
 
@@ -53,7 +53,7 @@ class CommunityMarketSteps {
 
     async verifyPriceSorted(order) {
         const isSorted = await this.communityMarketPage.isPriceSorted(order);
-        assert(isSorted, `Prices are not sorted in ${order} order`);
+        assert.isTrue(isSorted, `Prices are not sorted in ${order} order`);
     }
 }
 

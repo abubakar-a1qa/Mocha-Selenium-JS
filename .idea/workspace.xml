@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="Cleaning unnecessary timeouts">
-      <change afterPath="$PROJECT_DIR$/resources/testData.json" afterDir="false" />
+    <list default="true" id="88e23f2f-48dd-46bb-9f10-6feb402ad457" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" beforeDir="false" afterPath="$PROJECT_DIR$/locators/CommunityMarketPageLocators.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/pageObjects/CommunityMarketPage.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/CommunityMarketSteps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/steps/HomePageSteps.js" beforeDir="false" afterPath="$PROJECT_DIR$/steps/HomePageSteps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/communityMarketTest.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/communityMarketTest.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/timeouts/TimeOut.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Mocha.Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}">
+  <component name="RunManager" selected="Mocha.Steam Community Market.Verify the Price Sorting">
     <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -156,10 +153,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Mocha.Steam Community Market.Verify the Price Sorting" />
         <item itemvalue="Mocha.Steam Community Market.Verify if 1st selected item is Displayed for ${scenario.testCase}" />
         <item itemvalue="Mocha.Steam Community Market" />
         <item itemvalue="Mocha.Steam Community Market.Verify if 1st selected item is Displayed" />
-        <item itemvalue="Mocha.Steam Community Market.Verify the Price Sorting" />
         <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
@@ -184,6 +181,7 @@
       <workItem from="1736496757631" duration="8912000" />
       <workItem from="1736831765368" duration="3217000" />
       <workItem from="1736918105336" duration="17051000" />
+      <workItem from="1737007094020" duration="4839000" />
     </task>
     <task id="LOCAL-00001" summary="updated gitIgnore">
       <option name="closed" value="true" />

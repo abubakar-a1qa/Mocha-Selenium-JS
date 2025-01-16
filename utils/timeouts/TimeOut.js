@@ -1,4 +1,5 @@
 const TimeOut = {
+    HalfSecond: 500,
     OneSecond: 1000,
     TwoSeconds: 2000,
     ThreeSeconds: 3000,

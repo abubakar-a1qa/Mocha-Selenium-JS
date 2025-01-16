@@ -1,5 +1,4 @@
 const { By } = require('selenium-webdriver');
-const assert = require('assert');
 const BasePage = require('./BasePage');
 const CommunityMarketPageLocators = require('../locators/CommunityMarketPageLocators');
 const TimeOut = require("../utils/timeouts/TimeOut");
@@ -67,9 +66,20 @@ class CommunityMarketPage extends BasePage {
 
     async getItemNamesFromResultList() {
         const itemNames = [];
-        for (let i = 0; i <= 9; i++) {
-            const itemName = await this.getText(By.xpath(this.locators.resultsTableItemsByItemNameLocator(i)));
+        let index = 0;
+
+        while (true) {
+            const itemLocator = By.xpath(this.locators.resultsTableItemsByItemNameLocator(index));
+
+            const element = await this.driver.findElements(itemLocator);
+
+            if (element.length === 0) {
+                break;
+            }
+
+            const itemName = await this.getText(itemLocator);
             itemNames.push(itemName);
+            index++;
         }
         return itemNames;
     }
@@ -87,31 +97,11 @@ class CommunityMarketPage extends BasePage {
         }
     }
 
-    /*async waitForItemsToChange(resultList) {
-        let isChanged = false;
-
-        while (!isChanged) {
+    async waitForItemsToChange(resultList, timeout = TimeOut.HalfSecond) {
+        return await this.driver.wait(async () => {
             const updatedResultList = await this.getItemNamesFromResultList();
-            isChanged = resultList.some((item, index) => item !== updatedResultList[index]);
-        }
-        return isChanged;
-    }*/
-
-    async waitForItemsToChange(resultList, maxRetries = 3, intervalTime = TimeOut.OneSecond) {
-        let isChanged = false;
-        let retries = 0;
-
-        while (!isChanged && retries < maxRetries) {
-            const updatedResultList = await this.getItemNamesFromResultList();
-            isChanged = resultList.some((item, index) => item !== updatedResultList[index]);
-
-            if (!isChanged) {
-                retries++;
-                await this.driver.sleep(intervalTime);
-            }
-        }
-
-        return isChanged;
+            return resultList.some((item, index) => item !== updatedResultList[index]);
+        }, timeout);
     }
 
     async isPriceSorted(order = 'ascending') {
