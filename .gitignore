@@ -31,6 +31,7 @@ bower_components
 
 # IDEs and editors
 .idea
+.idea/workspace.xml
 .project
 .classpath
 .c9/
@@ -89,3 +90,10 @@ lerna-debug.log
 # System Files
 .DS_Store
 Thumbs.db
+
+#mochawesome report
+mochawesome-report/
+
+# WebStorm
+/.idea
+.idea/workspace.xml
