@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86f92bd-42e5-419e-8362-e5a9289bc8cf" name="Changes" comment="vcs.xml">
-      <change afterPath="$PROJECT_DIR$/pageObjects/ArticlePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pageObjects/BasePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pageObjects/HomePage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/steps/ArticlePageSteps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/steps/HomePageSteps.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/wikipediaTests.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +148,7 @@
       <workItem from="1736432136379" duration="188000" />
       <workItem from="1736439140522" duration="72000" />
       <workItem from="1736485797058" duration="1396000" />
-      <workItem from="1737095325303" duration="560000" />
+      <workItem from="1737095325303" duration="753000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the code. Used 'assert' instead of 'expect'">
       <option name="closed" value="true" />

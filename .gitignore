@@ -92,3 +92,5 @@ lerna-debug.log
 Thumbs.db
 /.idea
 .idea/workspace.xml
+package-lock.json
+package.json
